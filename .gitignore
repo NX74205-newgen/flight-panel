@@ -1,0 +1,8 @@
+.pio/
+.vscode/
+__pycache__/
+backup/
+*.jpg
+*.jpeg
+*.png
+*.bin
