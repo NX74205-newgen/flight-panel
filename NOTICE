@@ -1,0 +1,9 @@
+Third-party data (not covered by the MIT license in LICENSE)
+
+src/airlines_db.h — derived from Wikipedia "List of airline codes"
+  (https://en.wikipedia.org/wiki/List_of_airline_codes), licensed under
+  CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/).
+  Redistributed versions of this file must keep this attribution and the same license.
+
+src/airports_db.h — derived from OurAirports (https://ourairports.com/data/),
+  released into the public domain.
