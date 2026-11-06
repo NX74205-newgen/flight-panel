@@ -87,3 +87,10 @@ The web UI has no authentication either — keep the panel on a trusted home net
   (~5,900 codes, CC BY-SA 4.0, `src/airlines_db.h`; refresh with `python tools/genairlines.py`).
   IATA codes are not taken from Wikipedia because they are widely reused by different airlines.
 - **Aircraft types:** a hand-made list in `src/lookup.cpp`.
+
+## License
+
+[MIT](LICENSE): you may use this code in any project, including commercial ones, as long as you
+keep the copyright notice with the link to this repository
+(https://github.com/NX74205-newgen/flight-panel).
+`src/airlines_db.h` is derived from Wikipedia and stays under CC BY-SA 4.0; see [LICENSE](LICENSE).
