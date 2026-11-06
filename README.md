@@ -4,6 +4,12 @@ Shows the flights passing your window on a 64×32 HUB75 LED panel (P5) driven by
 Adafruit MatrixPortal S3. Data comes from Flightradar24; everything runs on the ESP32-S3, no PC
 or Raspberry Pi needed.
 
+> [!WARNING]
+> This project reads an **unofficial, undocumented** Flightradar24 endpoint. Flightradar24's
+> [Terms and Conditions](https://www.flightradar24.com/terms-and-conditions) restrict automated
+> access to their service and limit use of their data to personal, non-commercial purposes.
+> Read the [disclaimer](#disclaimer-flightradar24-data) before using it.
+
 ## What it shows
 
 A flight within the display radius (12 km by default):
@@ -76,8 +82,7 @@ The web UI has no authentication either — keep the panel on a trusted home net
 ## Data sources
 
 - **Flights:** the unofficial public Flightradar24 feed (`feed.js`), the same one their website
-  uses. It is not a documented API and may change or stop working at any time; this project is
-  meant for personal, non-commercial use, so please keep the polling interval reasonable.
+  uses. See the [disclaimer](#disclaimer-flightradar24-data) below.
   Over Almaty it is the only source with coverage (adsb.lol, airplanes.live and OpenSky showed nothing).
 - **Cities:** a hand-made list in `src/lookup.cpp` first, then the full
   [OurAirports](https://ourairports.com/data/) database (~9,000 airports, public domain,
@@ -87,6 +92,33 @@ The web UI has no authentication either — keep the panel on a trusted home net
   (~5,900 codes, CC BY-SA 4.0, `src/airlines_db.h`; refresh with `python tools/genairlines.py`).
   IATA codes are not taken from Wikipedia because they are widely reused by different airlines.
 - **Aircraft types:** a hand-made list in `src/lookup.cpp`.
+
+## Disclaimer: Flightradar24 data
+
+- This project is **not affiliated with, endorsed by, or supported by Flightradar24 AB**.
+  "Flightradar24" is a trademark of its owner and is used here only to describe the data source.
+- The firmware polls `data-cloud.flightradar24.com/zones/fcgi/feed.js`, an **unofficial and
+  undocumented** endpoint used by the Flightradar24 website. It is not a public API: it can
+  change, be rate-limited, or block your IP address at any time without notice.
+- Flightradar24's [Terms and Conditions](https://www.flightradar24.com/terms-and-conditions)
+  restrict automated access to their service and allow use of their data for personal,
+  non-commercial purposes only. Using this firmware may not comply with those terms.
+- **You alone are responsible** for how you use this software and for complying with
+  Flightradar24's terms and any applicable law. The authors accept no liability for any
+  consequences (see also the warranty disclaimer in [LICENSE](LICENSE)).
+- Use it **only for personal, non-commercial purposes**: do not sell devices running this
+  firmware, do not redistribute or republish the flight data it receives, and do not lower the
+  polling interval below the default (8 s) or run many panels against the same endpoint.
+- No Flightradar24 data is stored in or distributed with this repository.
+- **Compliant alternatives:**
+  - the official [Flightradar24 API](https://fr24api.flightradar24.com/) (paid subscription);
+    only `src/flights.cpp` needs to be adapted;
+  - your own ADS-B receiver (RTL-SDR dongle + antenna, e.g. readsb/dump1090 on a Raspberry Pi),
+    whose local JSON can be read over your home network;
+  - community aggregators with open data policies such as [adsb.lol](https://adsb.lol) or
+    [airplanes.live](https://airplanes.live), where they have coverage.
+
+If you are a rights holder and have concerns about this project, please open an issue.
 
 ## License
 
