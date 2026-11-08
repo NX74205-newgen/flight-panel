@@ -4,6 +4,12 @@ Shows the flights passing your window on a 64×32 HUB75 LED panel (P5) driven by
 Adafruit MatrixPortal S3. Data comes from Flightradar24; everything runs on the ESP32-S3, no PC
 or Raspberry Pi needed.
 
+<p align="center">
+  <a href="docs/media/demo.mp4"><img src="docs/media/demo.webp" width="480"
+     alt="The panel showing Air Astana KC898 from Dubai on approach to Almaty, with the marquee scrolling"></a>
+  <br><sub>Air Astana KC898 on approach to Almaty. <a href="docs/media/demo.mp4">Full video (15 s, MP4)</a></sub>
+</p>
+
 > [!WARNING]
 > This project reads an **unofficial, undocumented** Flightradar24 endpoint. Flightradar24's
 > [Terms and Conditions](https://www.flightradar24.com/terms-and-conditions) restrict automated
@@ -20,6 +26,10 @@ ALA→IST           ✈        route
 Almaty → Istanbul · Air Astana · Airbus A321neo · P4-KDE · 760 km/h   (marquee)
 3200m▲      NE 4.2km        altitude + climb/descent · where to look · distance
 ```
+
+<p align="center">
+  <img src="docs/media/panel.jpg" width="320" alt="The panel on a windowsill at night">
+</p>
 
 When nothing is close: a clock, the date and the nearest flight in the polling area (40 km).
 When several flights are in range they rotate, nearest first.
@@ -40,6 +50,10 @@ When several flights are in range they rotate, nearest first.
    - **Window faces, °** — the compass direction you look out of the window
      (the plane icon is drawn relative to it; 0 = north-up);
    - **Orientation** — USB port on the left or on the right.
+
+<p align="center">
+  <img src="docs/media/settings.png" width="360" alt="Settings page of the panel's web UI">
+</p>
 
 The web UI is in English and Russian: the language follows your browser, and the RU/EN button
 in the top-right corner switches it (the choice is remembered in a cookie).

@@ -6,3 +6,7 @@ backup/
 *.jpeg
 *.png
 *.bin
+# raw phone media (may carry GPS/device metadata); cleaned copies live in docs/media
+/PXL_*
+!docs/media/*.jpg
+!docs/media/*.png
