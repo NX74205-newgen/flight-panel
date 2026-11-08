@@ -76,7 +76,7 @@ h1{font-size:20px;margin:4px 0 16px;display:flex;justify-content:space-between;a
 h1 a{font-size:14px;font-weight:600;color:var(--mut);text-decoration:none;border:1px solid var(--bd);border-radius:6px;padding:3px 8px}
 .card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;margin-bottom:14px}
 label{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 0}
-label span{color:var(--mut)}input,select{width:150px;padding:6px 8px;border-radius:6px;border:1px solid var(--bd);background:var(--bg);color:var(--fg);font:inherit}
+label span{color:var(--mut)}input,select{flex:none;width:180px;box-sizing:border-box;padding:6px 8px;border-radius:6px;border:1px solid var(--bd);background:var(--bg);color:var(--fg);font:inherit}
 button{background:var(--acc);color:#000;border:0;border-radius:6px;padding:9px 16px;font:inherit;font-weight:600;cursor:pointer}
 button.sec{background:transparent;color:var(--fg);border:1px solid var(--bd)}
 table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:5px 4px;text-align:left;border-bottom:1px solid var(--bd)}
